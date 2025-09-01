@@ -62,8 +62,30 @@ $$
 
 可以看到 上三角是0 下三角是-$\infty$ 
 蓝色的是需要mask的位置，红色的是不需要被Mask的部分。
-### MLM Masked Language Model Mask
-在BERT 中，输入序列中的每个token 有15% 的概率被Masked 掉。Masked 掉的token 会被替换为[MASK] 这个特殊token。
+### MLM Masked Language Model Mask 
+#### 具体做法
+在输入序列中替换：将一部分token 替换为[MASK]
+Mask 矩阵
+损失计算：只对被Mask的部分计算损失，其余位置不会贡献损失。
 
 
 ## Mask的实现细节
+1. Shape 对齐：需要保证Mask与注意力分数的形状一致
+2. 填充：将需要屏蔽的位置设置成一个非常大的复数。然后在softmax之前 加到注意力分数上，这样在softmax之后，这些位置的分数就会变成一个非常小的数，softmax 之后就会变成一个接近于0的数。
+
+## 代码实现
+
+```
+import torch
+
+def create_padding_mask(seq,pad_tokeen=0):
+    """
+    输入seq:(batch_size,seq_len)
+    输出 mask:(batch_size,1,1,seq_len)
+    """
+    #等于pa d
+
+
+
+
+```
