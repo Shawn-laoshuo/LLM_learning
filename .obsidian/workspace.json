@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "2aec7c7eb08d3245",
@@ -180,7 +181,7 @@
       "open-vscode:VSCode": false
     }
   },
-  "active": "c3021b75ac6d9fd9",
+  "active": "aa9d1aaca06f85b6",
   "lastOpenFiles": [
     "README.md",
     "注意力机制.md",
