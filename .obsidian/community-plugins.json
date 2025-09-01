@@ -1,4 +1,6 @@
 [
   "remotely-save",
-  "obsidian-git"
+  "obsidian-git",
+  "obsidian-advanced-uri",
+  "open-vscode"
 ]

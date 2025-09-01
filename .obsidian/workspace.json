@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "2aec7c7eb08d3245",
@@ -176,7 +177,8 @@
       "command-palette:打开命令面板": false,
       "bases:创建新数据库": false,
       "remotely-save:Remotely Save": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "open-vscode:VSCode": false
     }
   },
   "active": "aa9d1aaca06f85b6",

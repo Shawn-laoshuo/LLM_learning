@@ -47,13 +47,22 @@ Decoder 自注意力 解码器处理目标序列同样需要屏蔽padding
 Cross-Attention 若源序列中有Padding 也需要屏蔽
 
 ### Causal Mask
-也叫做未来帧屏蔽 或者自回归掩码。
-有
+也叫做未来帧屏蔽 或者自回归掩码。解码阶段 解码器需要一次只生成当前的token，不能访问还没生成的未来token，以确报预测是自回归的，符合语言生成的因果顺序。
 
+Look-head Mask一般是一个上三角或则下三角矩阵。对于长度L的序列而言，下标(i,j) 表示第i个token 是否能看到第j个token。
+若 $j$ >$i$ 则代表未来位置，需要屏蔽 
+$$
+\begin{bmatrix}
+\color{black}{(0,0)} & \color{blue}{(0,1)} & \color{blue}{(0,2)} & \color{blue}{(0,3)} \\
+\color{red}{(1,0)} & \color{black}{(1,1)} & \color{blue}{(1,2)} & \color{blue}{(1,3)} \\
+\color{red}{(2,0)} & \color{red}{(2,1)} & \color{black}{(2,2)} & \color{blue}{(2,3)} \\
+\color{red}{(3,0)} & \color{red}{(3,1)} & \color{red}{(3,2)} & \color{black}{(3,3)}
+\end{bmatrix}
+$$
+
+可以看到 上三角是0 下三角是-$\infty$ 
 
 ### MLM Masked Language Model Mask
 
 
 ## Mask的实现细节
-
-
