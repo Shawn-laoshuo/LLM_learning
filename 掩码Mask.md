@@ -50,7 +50,7 @@ Cross-Attention 若源序列中有Padding 也需要屏蔽
 也叫做未来帧屏蔽 或者自回归掩码。解码阶段 解码器需要一次只生成当前的token，不能访问还没生成的未来token，以确报预测是自回归的，符合语言生成的因果顺序。
 
 Look-head Mask一般是一个上三角或则下三角矩阵。对于长度L的序列而言，下标(i,j) 表示第i个token 是否能看到第j个token。
-若 $j$ >$i$ 则代表未来位置，需要屏蔽 
+若 $j$ >$i$ 则代表未来位置，需要屏蔽 ，若 $j$ <= $i$ 则代表历史位置，不需要屏蔽。
 $$
 \begin{bmatrix}
 \color{black}{(0,0)} & \color{blue}{(0,1)} & \color{blue}{(0,2)} & \color{blue}{(0,3)} \\
