@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "注意力机制.md",
+                "file": "掩码Mask.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "注意力机制"
+              "title": "掩码Mask"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "2aec7c7eb08d3245",
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "注意力机制.md",
+                "file": "掩码Mask.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "注意力机制 的反向链接列表"
+              "title": "掩码Mask 的反向链接列表"
             }
           },
           {
@@ -148,12 +148,23 @@
               "icon": "lucide-list",
               "title": "大纲"
             }
+          },
+          {
+            "id": "c3021b75ac6d9fd9",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -170,9 +181,9 @@
   },
   "active": "aa9d1aaca06f85b6",
   "lastOpenFiles": [
-    "掩码Mask.md",
-    "注意力机制.md",
     "README.md",
+    "注意力机制.md",
+    "掩码Mask.md",
     "未命名.base",
     "未命名 1.base"
   ]
