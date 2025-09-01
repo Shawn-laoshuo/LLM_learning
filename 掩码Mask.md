@@ -61,8 +61,9 @@ $$
 $$
 
 可以看到 上三角是0 下三角是-$\infty$ 
-
+蓝色的是需要mask的位置，红色的是不需要被Mask的部分。
 ### MLM Masked Language Model Mask
+在BERT 中，输入序列中的每个token 有15% 的概率被Masked 掉。Masked 掉的token 会被替换为[MASK] 这个特殊token。
 
 
 ## Mask的实现细节
