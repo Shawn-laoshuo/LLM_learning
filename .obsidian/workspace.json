@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LLM基础/Decoding 解码技术.md",
+                "file": "LLM基础/Normalization标准化.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Decoding 解码技术"
+              "title": "Normalization标准化"
             }
           }
         ]
@@ -183,8 +183,8 @@
   },
   "active": "0e9c15b300c72ef5",
   "lastOpenFiles": [
-    "README.md",
     "LLM基础/Decoding 解码技术.md",
+    "README.md",
     "LLM基础/掩码Mask.md",
     "LLM基础/Encoder Decoder.md",
     "LLM基础",
