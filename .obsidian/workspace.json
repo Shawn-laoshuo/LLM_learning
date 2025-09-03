@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "2aec7c7eb08d3245",
@@ -181,7 +180,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0e9c15b300c72ef5",
+  "active": "c3021b75ac6d9fd9",
   "lastOpenFiles": [
     "LLM基础/注意力机制.md",
     "LLM基础/掩码Mask.md",
