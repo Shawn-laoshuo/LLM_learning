@@ -1,24 +1,24 @@
 {
   "main": {
-    "id": "21a4ab60b21bcb96",
+    "id": "d6912d4604f0b340",
     "type": "split",
     "children": [
       {
-        "id": "70ad7dfa9dfbbc3d",
+        "id": "5f9c97656bcef670",
         "type": "tabs",
         "children": [
           {
-            "id": "0e9c15b300c72ef5",
+            "id": "2edbb0006bfb0683",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LLM基础/Normalization标准化.md",
+                "file": "Classify Text into Labels.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Normalization标准化"
+              "title": "Classify Text into Labels"
             }
           }
         ]
@@ -27,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "cb83b63c063b70fc",
+    "id": "a97e8c801c8a61e5",
     "type": "split",
     "children": [
       {
-        "id": "04355ef8a795496b",
+        "id": "92e896eaab55862b",
         "type": "tabs",
         "children": [
           {
-            "id": "a78d0da2f467cdb8",
+            "id": "9f6ea6711945d2bf",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +48,7 @@
             }
           },
           {
-            "id": "c604d3d14208eba3",
+            "id": "de956f98f8d40124",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +65,7 @@
             }
           },
           {
-            "id": "7d61c4df69c086e7",
+            "id": "d29b1dfdb2cc76cf",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -78,50 +78,51 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 214.5
   },
   "right": {
-    "id": "2aec7c7eb08d3245",
+    "id": "79e740550222bf8e",
     "type": "split",
     "children": [
       {
-        "id": "eebaeeccb869e851",
+        "id": "2324ff33d63a531c",
         "type": "tabs",
         "children": [
           {
-            "id": "386a99b7f7a6c486",
+            "id": "c419ea46f7e3af89",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "掩码Mask.md",
-                "collapseAll": false,
+                "file": "Classify Text into Labels.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
-                "showSearch": false,
+                "showSearch": true,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "掩码Mask 的反向链接列表"
+              "title": "Classify Text into Labels 的反向链接列表"
             }
           },
           {
-            "id": "0a8bf9782631344c",
+            "id": "ff75e5e45313c080",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Classify Text into Labels.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "出链"
+              "title": "Classify Text into Labels 的出链列表"
             }
           },
           {
-            "id": "59cb3560ce3768e3",
+            "id": "5c2510bf405d47c6",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -136,82 +137,49 @@
             }
           },
           {
-            "id": "ec1790bafde80bd3",
+            "id": "ac0300630a1de07a",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "followCursor": false,
-                "showSearch": false,
+                "file": "Classify Text into Labels.md",
+                "followCursor": true,
+                "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
-            }
-          },
-          {
-            "id": "c3021b75ac6d9fd9",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "title": "Classify Text into Labels 的大纲"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
-      "open-vscode:VSCode": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "bases:创建新数据库": false,
-      "remotely-save:Remotely Save": false,
-      "obsidian-git:Open Git source control": false
+      "bases:创建新数据库": false
     }
   },
-  "active": "0e9c15b300c72ef5",
+  "active": "2edbb0006bfb0683",
   "lastOpenFiles": [
-    "LangChain/装饰器.md",
-    "LangChain/稠密向量和稀疏向量.md",
-    "LangChain/欢迎.md",
-    "LangChain/Semantic search engine.md",
-    "LangChain/README.md",
-    "LangChain/Langchain的主要模块.md",
-    "LangChain/Classify Text into Labels.md",
-    "LangChain/Chat models and prompts.md",
-    "LangChain/Build an Extraction Chain.md",
-    "LangChain",
-    "Langchain-_learning/装饰器.md",
-    "Langchain-_learning/稠密向量和稀疏向量.md",
-    "Langchain-_learning/欢迎.md",
-    "Langchain-_learning/Semantic search engine.md",
-    "Langchain-_learning/README.md",
-    "Langchain-_learning/Langchain的主要模块.md",
-    "Langchain-_learning/Classify Text into Labels.md",
-    "Langchain-_learning/Chat models and prompts.md",
-    "Langchain-_learning/Build an Extraction Chain.md",
-    "Langchain-_learning",
-    "HuggingFace",
-    "Langchain",
-    "LLM基础/Decoding 解码技术.md",
+    "Build an Extraction Chain.md",
+    "Chat models and prompts.md",
+    "Langchain的主要模块.md",
     "README.md",
-    "LLM基础/掩码Mask.md",
-    "LLM基础/Encoder Decoder.md",
-    "LLM基础",
-    "LLM基础/Normalization标准化.md",
-    "LLM基础/注意力机制.md",
-    "未命名.base",
-    "未命名 1.base"
+    "Classify Text into Labels.md",
+    "Semantic search engine.md",
+    "稠密向量和稀疏向量.md",
+    "欢迎.md",
+    "装饰器.md"
   ]
 }

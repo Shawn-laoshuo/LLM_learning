@@ -11,14 +11,10 @@
             "id": "8c7d3204fa477869",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "掩码Mask.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "掩码Mask"
+              "title": "新标签页"
             }
           }
         ]
@@ -143,8 +139,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "remotely-save:Remotely Save": false,
-      "obsidian-git:Open Git source control": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
