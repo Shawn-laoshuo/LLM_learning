@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HuggingFace/未命名.md",
+                "file": "LLM基础/lec1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "未命名"
+              "title": "lec1"
             }
           }
         ]
@@ -180,10 +180,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0e9c15b300c72ef5",
+  "active": "c3021b75ac6d9fd9",
   "lastOpenFiles": [
-    "HuggingFace/Transformers  Class 用到的方法.md",
+    "Pasted image 20250915180213.png",
+    "Pasted image 20250915174024.png",
     "HuggingFace/未命名.md",
+    "LLM基础/lec1.md",
+    "HuggingFace/Transformers  Class 用到的方法.md",
     "LangChain/装饰器.md",
     "LangChain/稠密向量和稀疏向量.md",
     "LangChain/Classify Text into Labels.md",
