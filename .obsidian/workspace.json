@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HuggingFace/Transformers  Class 用到的方法.md",
+                "file": "HuggingFace/未命名.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Transformers  Class 用到的方法"
+              "title": "未命名"
             }
           }
         ]
@@ -180,8 +180,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c3021b75ac6d9fd9",
+  "active": "0e9c15b300c72ef5",
   "lastOpenFiles": [
+    "HuggingFace/Transformers  Class 用到的方法.md",
+    "HuggingFace/未命名.md",
     "LangChain/装饰器.md",
     "LangChain/稠密向量和稀疏向量.md",
     "LangChain/Classify Text into Labels.md",
@@ -195,7 +197,6 @@
     "HuggingFace/Transformer Models.md",
     "HuggingFace/Tokenizers.md",
     "HuggingFace/Transformer Encoding Text.md",
-    "HuggingFace/Transformers  Class 用到的方法.md",
     "LLM基础/掩码Mask.md",
     "LLM基础/注意力机制.md",
     "Pasted image 20250909135532.png",
