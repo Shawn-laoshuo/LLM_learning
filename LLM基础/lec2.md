@@ -96,7 +96,8 @@ nn.init.trunc_normal_(x, mean=0, std=1, a=-2, b=2)
 ```python
 x = torch.zero(4,8)
 assert x.dype == torch.float32
-assert x.numel() == 4*8
+assert x.numel() == 4*8 # number of elements
 assert x.element_size() == 4 # Float is 4 bytes
 assert get_memory_usage(x) == 4 * 8 * 4 # 128 bytes
+# 这个get_memory_usage(x) 是
 ```
