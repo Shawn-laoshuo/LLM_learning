@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HuggingFace/Transformer Models.md",
+                "file": "HuggingFace/Tokenizers.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Transformer Models"
+              "title": "Tokenizers"
             }
           }
         ]
@@ -182,9 +182,9 @@
   },
   "active": "0e9c15b300c72ef5",
   "lastOpenFiles": [
+    "HuggingFace/Transformer Models.md",
     "HuggingFace/Tokenizers.md",
     "HuggingFace/Transformer Encoding Text.md",
-    "HuggingFace/Transformer Models.md",
     "HuggingFace/Transformers  Class 用到的方法.md",
     "HuggingFace/未命名.md",
     "LLM基础/lec1.md",
