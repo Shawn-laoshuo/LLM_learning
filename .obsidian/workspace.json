@@ -180,11 +180,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "33c3d8f0edde0adc",
+  "active": "c3021b75ac6d9fd9",
   "lastOpenFiles": [
+    "python-highlight.css.md",
+    "LLM基础/lec2.md",
+    "LLM基础/Normalization标准化.md",
+    "Pasted image 20250929195256.png",
     "LLM基础/lec1.md",
     "conflict-files-obsidian-git.md",
-    "LLM基础/lec2.md",
     "HuggingFace/Tokenizers.md",
     "HuggingFace/Transformer Models.md",
     "HuggingFace/Transformer Encoding Text.md",
@@ -207,7 +210,6 @@
     "Pasted image 20250909135532.png",
     "LLM基础/Decoding 解码技术.md",
     "LLM基础/Encoder Decoder.md",
-    "LLM基础/Normalization标准化.md",
     "HuggingFace/AutoModel 的内部流程.md",
     "HuggingFace",
     "README.md",

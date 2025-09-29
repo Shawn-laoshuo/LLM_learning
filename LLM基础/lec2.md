@@ -57,3 +57,39 @@ Adam状态：8 Bytes
 
 
 # Memory Accounting 内存计算
+## Tensor 基础
+创建tensor 
+```python
+x = torch.tensor([[1., 2, 3], [4, 5, 6]]) 
+
+x = torch.zeros(4, 8) # 4x8 matrix of all zeros
+
+x = torch.ones(4, 8) # 4x8 matrix of all ones 
+
+x = torch.randn(4, 8) # 4x8 matrix of iid Normal(0, 1) samples 
+```
+分配未初始化的值：
+```
+x = torch.empty(4,8)
+```
+注意，这里不是张量里面没有value。而是分配了一块内存，但是不对这块内存做初始化。所以tensor的值是 原本内存中残留数。通常看起来像是随机数。
+创建完参数tensor之后，要对其进行初始化
+```
+nn.init.trunc_normal_(x, mean=0, std=1, a=-2, b=2)
+```
+*trunc= truncated（截断）normal 正态分布， _结尾 = in-place 操作（直接修改张量x本身，不返回新的张量）*
+作用是 用一个截断正态分布 来初始化x 。也是就说 随机数来自 均值为0标准差是1的分布，但是会被限制在 -2，2 之间，超过范围的值会被丢弃并重新采样。
+
+## Tensor的内存
+### float32
+32位浮点数
+![[Pasted image 20250929195256.png]]
+深度学习中默认使用32位的浮点数。 
+**sign(符号位)** : 1 bit  0表示正数，1表示负数
+**Exponent(指数位)**：存的是移码(biased exponent) 。 `真实的指数= 存的指数-127` 127就是bias
+**Fraction(尾数/小数位)**: 23bits  存的是小数部分(mantissa)，前面有个隐含的1(没写出来) 所以有效位是 1+23 = 24。
+> [!tip]- 为什么要这样设计？为什么是23位但是有效位却是24位？
+> 1.xxxxx... × 2^e
+> 前导的 1 是必然存在的（除非是 denormalized，这时没有隐含 1）。
+> 既然必然存在，就没必要存储，直接省下 1 bit 用于扩大 fraction 精度。
+
