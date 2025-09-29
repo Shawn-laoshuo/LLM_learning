@@ -1,7 +1,51 @@
-```css
-.markdown-rendered pre code.language-python {
-  background-color: #e6faff; /* 浅蓝底 */
-  border-radius: 6px;
-  padding: 8px;
-}
-```
+## 🔹 常用 Callout 模板清单
+
+### 1. 💡 Tip / 提示
+
+`> [!tip]- 提示 > 这里写一些学习小技巧、常见坑点或者补充知识。`
+
+---
+
+### 2. 📘 Note / 备注
+
+`> [!note]- 备注 > 用于记录额外说明、背景信息。`
+
+---
+
+### 3. 📖 Example / 示例
+
+` > [!example]- 示例 > ```python > x = torch.zeros(4, 8) > print(x) > ``` `
+
+---
+
+### 4. ⚠️ Warning / 警告
+
+`> [!warning]- 注意 > 这里提醒容易出错的地方，比如公式里 bias = 127。`
+
+---
+
+### 5. ❓ Question / 疑问
+
+`> [!question]- 疑问 > 这里可以放一个自己没想通的问题，复习时再点开看答案。`
+
+---
+
+### 6. ✅ Success / 结论
+
+`> [!success]- 结论 > float32 的有效位数是 **24 位**（23 bits fraction + 1 隐含位）。`
+
+---
+
+### 7. ⏱️ Info / 信息
+
+`> [!info]- 信息 > 适合用来写概念定义、术语解释。`
+
+---
+
+### 📌 用法小技巧
+
+- **`[!tip]`** → 永远展开
+    
+- **`[!tip]+`** → 默认展开，可折叠
+    
+- **`[!tip]-`** → 默认折叠，需要点击才展开
