@@ -1,5 +1,7 @@
 {
   "enabledCssSnippets": [
-    "python-highlight"
+    "python-highlight",
+    "python_style",
+    "callout"
   ]
 }

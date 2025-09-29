@@ -69,7 +69,7 @@ x = torch.ones(4, 8) # 4x8 matrix of all ones
 x = torch.randn(4, 8) # 4x8 matrix of iid Normal(0, 1) samples 
 ```
 分配未初始化的值：
-```
+```python
 x = torch.empty(4,8)
 ```
 注意，这里不是张量里面没有value。而是分配了一块内存，但是不对这块内存做初始化。所以tensor的值是 原本内存中残留数。通常看起来像是随机数。
@@ -93,3 +93,10 @@ nn.init.trunc_normal_(x, mean=0, std=1, a=-2, b=2)
 > 前导的 1 是必然存在的（除非是 denormalized，这时没有隐含 1）。
 > 既然必然存在，就没必要存储，直接省下 1 bit 用于扩大 fraction 精度。
 
+```python
+x = torch.zero(4,8)
+assert x.dype == torch.float32
+assert x.numel() == 4*8
+assert x.element_size() == 4 # Float is 4 bytes
+assert get_memory_usage(x) == 4 * 8 * 4 # 128 bytes
+```
