@@ -99,5 +99,43 @@ assert x.dype == torch.float32
 assert x.numel() == 4*8 # number of elements
 assert x.element_size() == 4 # Float is 4 bytes
 assert get_memory_usage(x) == 4 * 8 * 4 # 128 bytes
-# 这个get_memory_usage(x) 是
+# 这个get_memory_usage(x) 是 元素的个数*元素的size，最后得到结果
 ```
+GPT-3(175B) 的隐藏维度 $d_{model}$  = 12288
+$W_1$ 的形状 (12288,49152)
+$W2$的形状(49152,12288)
+两个矩阵都是 2.3 GB，一个就已经很大了
+
+### float16
+16位浮点数
+![[Pasted image 20250929212929.png]]
+相对于 32位浮点数 具体细节有所变化，但是细节没太大变化。
+每个数字的大小  是 16bits/8 = 2 byte 
+因此
+```python
+assert x.element_size() == 2
+```
+float16相对于 float32 的优点是运算速度快了。但是缺点是精度有所下降了。尤其是对小数的影响很大
+>[!question]- 为什么特意提到小数？难道对大数的影响更小？
+>float32 有 8bit指数 可以表示 从 $10^{-38}$ 到 $10^{38}$ 
+>float16 只有 5bit指数 只能表示从 $10^{-5}$ 到 $10^{5}$
+>用float16表示大数的时候，还能靠指数往上撑
+>![[Pasted image 20250929214713.png]]
+>![[Pasted image 20250929214739.png]]
+
+```python
+x = torch.tensor([1e-8],dtype=torch.float16)
+assert x =0
+```
+这里出现了 underflow 下溢出。
+
+### bfloat16
+![[Pasted image 20250929215022.png]]
+Google Brain 用 bfloat brain floating point  达到了 既拥有 float32的精度 也拥有float16的内存大小。
+
+
+### fp8
+![[Pasted image 20250929215139.png]]
+
+
+## Compute Accounting 计算
