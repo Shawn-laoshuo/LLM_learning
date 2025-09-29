@@ -56,3 +56,4 @@ Adam状态：8 Bytes
 另外一个问题是：这里没有把 activation 算进去。激活的显存开销 和 batch size，序列长度，层数相关。如果batch size很大 或者样本token很长。激活值可能比参数本身占用的显存还大。实际上激活值参数显存的主要瓶颈。
 
 
+# Memory Accounting 内存计算

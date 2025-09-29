@@ -4,22 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "70ad7dfa9dfbbc3d",
+        "id": "2a733dafcdb0bab7",
         "type": "tabs",
         "children": [
           {
-            "id": "0e9c15b300c72ef5",
+            "id": "33c3d8f0edde0adc",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "LLM基础/lec1.md",
-                "bFile": "LLM基础/lec1.md",
-                "aRef": "HEAD",
-                "bRef": ""
+                "file": "LLM基础/lec2.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: lec1"
+              "icon": "lucide-file",
+              "title": "lec2"
             }
           }
         ]
@@ -79,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 261.5,
-    "collapsed": true
+    "width": 261.5
   },
   "right": {
     "id": "2aec7c7eb08d3245",
@@ -182,7 +180,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0e9c15b300c72ef5",
+  "active": "33c3d8f0edde0adc",
   "lastOpenFiles": [
     "LLM基础/lec1.md",
     "conflict-files-obsidian-git.md",
