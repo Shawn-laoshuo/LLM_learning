@@ -174,10 +174,214 @@ assert x.stride(0) == 4
 >[!note] Pytorch 的视图 view
 Pytorch中许多操作只是提供tensor的不同视图(view)。这不是make a copy
 
+取第一行
 ```python
 y = x[0]
 assert torch.equaly(y,torch.tensor([1.,2,3]))
 assert same_storage(x,y)
 ```
+
+```python
+def same_storage(x: torch.Tensor, y: torch.Tensor):
+	return x.untyped_storage().data_ptr() == y.untyped_storage().data_ptr()
+```
+
+
 y是取的x的第一行。 y的值肯定是和x的第一行是相等的。
 同时 因为y取的是x的视图。y和x的内存肯定也是一块。
+
+取第一列
+```python
+y = x[:1]
+assert torch.equal(y,torch.tensor([2,5]))
+assert same_storage(x,y)
+```
+
+用view 改变张量的 形状
+view $2*3$ matrix as $3*2$:
+```python
+y = x.view(3,2) #将张量从2*3 改到3*2
+assert torch.equal(y,torch.tensor([1,2],[3,4],[5,6]))
+assert same_storage(x,y)
+```
+
+同样的 转置 transpose 矩阵同样不会对底层数据做修改
+```python
+y = x.transpose(1,0)
+assert torch.equal(y,torch.tensor([1,4],[2,5],[3,6]))
+assert same_storage(x,y)
+```
+
+在x矩阵中做修改，会营销到y矩阵。因为x和y是共享同一个内存的
+```python
+x[0][0] = 100
+assert y[0][0] == 100
+```
+
+contiguous 和 non-contiguous的概念
+```python
+x = torch.tensor([1.,2,3],[4,5,6])
+y = x.transpose(1,0)
+assert not y.is_contigous() # x是内存上连续的一块，转置后 stride的方式变了，y就不是连续的了
+try:
+	y.view(2,3) # view 在内存是 contiguous的时候才能成功。否则不会成功的。
+	assert False
+```
+根据这段代码，转置后由于 stride 的方向改变，因此转置后的矩阵在内存上不再是一整块连续的内存。
+
+下面的代码可以让 tensor 强制变成 contiguous 的
+```python
+y = x.transpose(1,0).contiguous().view(2,3)
+assert not same_storage(x,y)
+```
+我们可以看到 用  `.contiguous`方法将转置后的矩阵强制连续存储之后。和之前的x不是同一款存储空间了。
+
+
+#### tensor element-wise 
+element-wise 操纵 ，据说这个操作比较耗显存
+加减 平方 开分号 乘除 都用 element-wise 的操作。
+
+triu 用 upper triangular part 取矩阵的上三角
+在计算 casual Attention mask(因果注意掩码) 的时候 很有用。`M[i,j]` 是i对j的 contribution
+
+#### tensor matrix multiplication
+参数一般用`w` 来表示。在运算中 `w` 一般是一个 矩阵的形式。一行是一个 w，多行 w 摞在一起就成了一个 `W` 矩阵。这个`W` 矩阵和 输出数据相乘，就构成了一个线性变换。
+那么情况是这样，`W` 现在是一个 `[32,2]`的矩阵，输出数据应该是啥样的呢？可以确认的是 输出数据的最后一个维度一定是 32。而且这个32 还应该是 一条数据点的维度。
+
+结合我们的推理和实际情况，那输出的数据 就应该是 `[N,C,H,W]`  
+其中 N 是batch； C是 channel；H是高度，W是宽度。大概就是这样
+![[Pasted image 20250930135427.png]]
+
+
+#### torch的 einops **Einstein Operations**
+>[!question] 什么是 einops
+>`einops` 是一个 Python 库，全称 **Einstein Operations**。
+>它提供了一种 **用爱因斯坦求和约定 (Einstein summation notation)** 来写张量的重排 / 合并 / 拆分操作。
+>- 常用于 **深度学习** 里替代 `view`、`reshape`、`transpose`、`permute` 这些繁琐的 API。
+>- `einops` 提供更直观的 **字符串语法**，比如 `"batch height width channel -> batch channel height width"`
+
+>[!question] sequence数据送入模型是怎么做的？
+>- N: Batch   一个batch里面有多个样本
+>- seq: Sequence 一句话里面有多少个token
+>- head: Attention Heads 在多头注意力里面 把hidden 维度切成多个头
+>- hidden: 每个head 自己的 embedding维度。
+
+>[!example] 例子：
+> batch N = 2（两句话）
+> seq = 5（每句话 5 个 token）
+> head = 4（注意力头数）
+> hidden = 16（每个 head 的维度）
+
+输入的模型维度就是 shape = `(2, 5, 4, 16)`
+
+对于一个 tensor 表示方式可以是：
+`x = torch.ones(2, 2, 1, 3) # batch seq heads hidden`
+
+也可以用 jaxtyping 的方式用来给张量加上 **类型注解 (type annotation)**：
+`x: Float[torch.Tensor, "batch seq heads hidden"] = torch.ones(2, 2, 1, 3)`
+
+##### einsum **Einstein summation convention**（爱因斯坦求和约定）来做矩阵乘法
+>[!note] einsum 可以让矩阵乘法更简单。
+>```python
+>x: Float[torch.Tensor, "batch seq1 hidden"] = torch.ones(2, 3, 4) 
+>y: Float[torch.Tensor, "batch seq2 hidden"] = torch.ones(2, 3, 4) 
+>#没有 einsum的情况下
+>z = x @ y.transpose(-2,-1) # batch, sequence,sequence
+>#有einsum的情况下
+>z = enisum(x,y,"batch seq1 hidden,batch seq2 hidden -> batch seq1 seq2")
+>#重复的东西可以用 ... 省略
+>z = enisum(x,y,"... seq1 hidden,... seq2 hidden -> ... seq1 seq2")
+>```
+
+
+在做矩阵乘法的时候，我们用 booking的记录来理清 数据之间的关系。
+
+
+##### eniops_reduce():
+reduce 方法可以将数据 通过 sum,mean,max,min 的方法减少一个维度。
+
+>[!example]
+>```python
+>#old way
+>y = x.mean(dim=-1) 
+>#new way
+>y = reduce(x,"... hidden -> ...","sum")
+>```
+
+>[!example]- 执行结果
+>```python
+>x = [
+   [ [1, 2, 3, 4],     [5, 6, 7, 8],     [9, 10, 11, 12] ],   # 第一句话 (batch 0)
+   [ [13,14,15,16],    [17,18,19,20],    [21,22,23,24] ]     # 第二句话 (batch 1)
+]
+>```
+>batch =2 seq=3 hidden =4
+>执行结果
+>```python
+>y = [
+   [ 2.5,  6.5, 10.5 ],   # 第一句话
+   [14.5, 18.5, 22.5 ]    # 第二句话
+]
+>```
+
+##### einops_rearrange
+目前来说最重要的一个方法，这个在 transformer运算的注意力计算中会出现。
+
+>[!note] 具体什么时候会用到呢
+>有时候张量的某一维，**其实是由两个（或更多）逻辑维度拼在一起的**，而我们需要把它拆开、单独操作。
+>```python
+>x: Float[torch.Tensor, "batch seq total_hidden"] = torch.ones(2, 3, 8)
+>```
+>这个时候 total_hidden 就是两个hidden层合起来的。
+>```python
+>x = rearrange(x, "... (heads hidden1) -> ... heads hidden1", heads=2)
+>```
+>这个时候 x就变成 [batch,seq,head,hidden1] 了
+>```python
+>w: Float[torch.Tensor,"hidden1 hidden2"] = torch.one(4,4)
+>```
+>执行 transformation
+>```python
+>x = enisum(x,w,"... hidden1, hidden1 hidden2 -> ... hidden2")
+>```
+>把 heads 和 hidden2 组合回一起
+>```python
+>x = rearrange(x,"... heads hidden2 -> ... (heads hidden2)")
+>```
+
+#### tensor 的计算开销
+FLOP (floating-point operation) 代表一个基本运算。基本运算的含义是，加减和乘除。
+FLOPs: 表示总共的 运算量
+FLOP/s: 表示每秒进行的 FLOP运算。用来衡量hardware的运算速度。
+
+>[!note] Linear model 的FLOP 运算量是怎么计算的
+>设置几个参数
+>B  Number of points 数据的数量
+>D Dimension of points 点的维度
+>K Number of output 输出的数量
+>```python
+>x = torch.ones(B,D,device=device)
+>w = torch.randn(D,K,device = device)
+>y = x@w
+>```
+>在矩阵运算中，我们有 $x[i,j]*w[j,i]$ 的运算。以及乘法的结果累加的运算。
+>因此每一对 (i,j,k) 都会有一次加法，一次乘法。
+>那么总共个flops就是
+>```python
+>actual_num_flops = 2*B*D*K
+>```
+
+从这里我们可以看到 线性层，如果不包括 加bias的话。 forwar 计算是 $2*参数量*数据量$ 的
+
+
+
+>[!Note]- 其他运算的 FLOPs
+>element-wise 在$m*n$ 的矩阵上。需要 O(m,n) 的FLOPs
+>在 mn 的矩阵上 就需要 mn 次的 FLOPs
+>深度学习中常见的操作有 **矩阵乘法，卷积，激活，归一化，dropout**
+>矩阵乘法最耗算力，因为激活函数，归一化，element-wise 运算 都是 O(N) 级别，只对每个元素做一次简单操作。
+>矩阵乘法是 O(N^3) 的级别 随着矩阵变大 计算量爆炸增长。
+>卷积本质上是矩阵乘法的展开特例，因此和矩阵乘法计算成本差不多。
+>因此如果矩阵够大，**矩阵乘法是最耗算力的操作**，其它操作的计算开销相比几乎可以忽略。
+
+

@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 261.5
+    "width": 261.5,
+    "collapsed": true
   },
   "right": {
     "id": "2aec7c7eb08d3245",
@@ -180,8 +181,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f78ff478ee671040",
+  "active": "c3021b75ac6d9fd9",
   "lastOpenFiles": [
+    "Pasted image 20250930135427.png",
     "LLM基础/Normalization标准化.md",
     "常用 Callout 模板清单.md",
     "README.md",
