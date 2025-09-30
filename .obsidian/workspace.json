@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 261.5,
-    "collapsed": true
+    "width": 261.5
   },
   "right": {
     "id": "2aec7c7eb08d3245",
@@ -183,15 +182,18 @@
   },
   "active": "f78ff478ee671040",
   "lastOpenFiles": [
+    "LLM基础/Normalization标准化.md",
+    "常用 Callout 模板清单.md",
+    "README.md",
+    "LLM基础/lec2.md",
+    "Pasted image 20250930102055.png",
+    "Pasted image 20250930101001.png",
     "Pasted image 20250929215139.png",
     "Pasted image 20250929215022.png",
     "Pasted image 20250929214739.png",
     "Pasted image 20250929214713.png",
     "Pasted image 20250929212929.png",
     "Pasted image 20250909135532.png",
-    "python-highlight.css.md",
-    "LLM基础/lec2.md",
-    "LLM基础/Normalization标准化.md",
     "Pasted image 20250929195256.png",
     "LLM基础/lec1.md",
     "conflict-files-obsidian-git.md",
@@ -201,7 +203,6 @@
     "HuggingFace/Transformers  Class 用到的方法.md",
     "HuggingFace/未命名.md",
     "Pasted image 20250915180213.png",
-    "Pasted image 20250915174024.png",
     "LangChain/装饰器.md",
     "LangChain/稠密向量和稀疏向量.md",
     "LangChain/Classify Text into Labels.md",
@@ -218,7 +219,6 @@
     "LLM基础/Encoder Decoder.md",
     "HuggingFace/AutoModel 的内部流程.md",
     "HuggingFace",
-    "README.md",
     "LLM基础",
     "未命名.base",
     "未命名 1.base"
