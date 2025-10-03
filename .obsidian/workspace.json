@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 261.5
+    "width": 261.5,
+    "collapsed": true
   },
   "right": {
     "id": "2aec7c7eb08d3245",
@@ -164,7 +165,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 255.5
+    "width": 255.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,7 +182,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c3021b75ac6d9fd9",
+  "active": "f78ff478ee671040",
   "lastOpenFiles": [
     "LLM基础/lec2.md",
     "LLM基础/lec3.md",
