@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 261.5
+    "width": 261.5,
+    "collapsed": true
   },
   "right": {
     "id": "2aec7c7eb08d3245",
@@ -168,7 +169,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "open-vscode:VSCode": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -177,7 +177,8 @@
       "command-palette:打开命令面板": false,
       "bases:创建新数据库": false,
       "remotely-save:Remotely Save": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "open-vscode:VSCode": false
     }
   },
   "active": "c3021b75ac6d9fd9",
