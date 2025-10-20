@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 261.5,
-    "collapsed": true
+    "width": 261.5
   },
   "right": {
     "id": "2aec7c7eb08d3245",
@@ -181,7 +180,7 @@
       "open-vscode:VSCode": false
     }
   },
-  "active": "f78ff478ee671040",
+  "active": "c3021b75ac6d9fd9",
   "lastOpenFiles": [
     "LLM基础/lec3.md",
     "LLM基础/实现分词器.md",
