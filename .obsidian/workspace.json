@@ -180,10 +180,11 @@
       "open-vscode:VSCode": false
     }
   },
-  "active": "c3021b75ac6d9fd9",
+  "active": "f78ff478ee671040",
   "lastOpenFiles": [
-    "LLM基础/lec3.md",
     "LLM基础/实现分词器.md",
+    "ThinkingOfWork",
+    "LLM基础/lec3.md",
     "LLM基础/lec2.md",
     "常用 Callout 模板清单.md",
     "Pasted image 20250930135427.png",
@@ -218,7 +219,6 @@
     "LLM基础/掩码Mask.md",
     "LLM基础/注意力机制.md",
     "LLM基础/Decoding 解码技术.md",
-    "LLM基础/Encoder Decoder.md",
     "HuggingFace",
     "LLM基础",
     "未命名.base",
