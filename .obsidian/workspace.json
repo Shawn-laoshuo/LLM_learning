@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LLM基础/Assignment.md",
+                "file": "LLM基础/Assignment1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Assignment"
+              "title": "Assignment1"
             }
           }
         ]
@@ -141,26 +141,17 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "LLM基础/Assignment1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
-            }
-          },
-          {
-            "id": "c3021b75ac6d9fd9",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "git-view"
+              "title": "Outline of Assignment1"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -179,13 +170,29 @@
   },
   "active": "f78ff478ee671040",
   "lastOpenFiles": [
-    "LLM基础/注意力机制.md",
-    "LLM基础/Assignment.md",
-    "LLM基础/掩码Mask.md",
-    "LLM基础/实现分词器.md",
-    "LLM基础/Normalization标准化.md",
-    "LLM基础/lec3.md",
+    "Exercise/如果自学，应该怎么学健身.md",
+    "Exercise/Untitled.md",
+    "Exercise/闪电增肌.md",
+    "Exercise/运动解剖学",
+    "Exercise/Untitled",
+    "Exercise/运动生理学",
+    "Exercise/运动营养学",
+    "Exercise/Welcome.md",
+    "Exercise",
+    "How to Think Straight about Psychology/第一章 心理学与科学.md",
+    "How to Think Straight about Psychology/第一章.md",
+    "How to Think Straight about Psychology/第一张.md",
+    "How to Think Straight about Psychology/Untitled.md",
+    "How to Think Straight about Psychology/Welcome.md",
+    "How to Think Straight about Psychology",
+    "LLM基础/Assignment1.md",
     "LLM基础/lec1.md",
+    "LLM基础/lec3.md",
+    "LLM基础/Normalization标准化.md",
+    "LLM基础/掩码Mask.md",
+    "LLM基础/注意力机制.md",
+    "Pasted image 20250909135532.png",
+    "LLM基础/实现分词器.md",
     "LLM基础/Encoder Decoder.md",
     "LLM基础/Decoding 解码技术.md",
     "ThinkingOfWork",
@@ -200,26 +207,14 @@
     "Pasted image 20250929214739.png",
     "Pasted image 20250929214713.png",
     "Pasted image 20250929212929.png",
-    "Pasted image 20250909135532.png",
     "Pasted image 20250929195256.png",
     "conflict-files-obsidian-git.md",
     "HuggingFace/Tokenizers.md",
     "HuggingFace/Transformer Models.md",
     "HuggingFace/Transformer Encoding Text.md",
     "HuggingFace/Transformers  Class 用到的方法.md",
-    "HuggingFace/未命名.md",
-    "LangChain/装饰器.md",
-    "LangChain/稠密向量和稀疏向量.md",
-    "LangChain/Classify Text into Labels.md",
-    "LangChain/Langchain的主要模块.md",
-    "LangChain/欢迎.md",
-    "LangChain/Semantic search engine.md",
-    "LangChain/README.md",
-    "LangChain/Chat models and prompts.md",
     "LangChain",
     "HuggingFace",
-    "LLM基础",
-    "未命名.base",
-    "未命名 1.base"
+    "LLM基础"
   ]
 }
