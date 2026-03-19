@@ -3,5 +3,6 @@
     "python-highlight",
     "python_style",
     "callout"
-  ]
+  ],
+  "theme": "system"
 }

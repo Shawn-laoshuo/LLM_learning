@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "a85004779d370418",
+        "id": "6cd5e5e55f5711f7",
         "type": "tabs",
         "children": [
           {
-            "id": "f78ff478ee671040",
+            "id": "a1e4ba1f7d058064",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "LLM基础/Assignment1.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Assignment1"
+              "title": "New tab"
             }
           }
         ]
@@ -61,7 +57,7 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "搜索"
+              "title": "Search"
             }
           },
           {
@@ -141,13 +137,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "LLM基础/Assignment1.md",
+                "file": "LLM基础/cs336_spring2025_assignment1_basics.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Assignment1"
+              "title": "Outline of cs336_spring2025_assignment1_basics"
             }
           }
         ],
@@ -155,10 +151,14 @@
       }
     ],
     "direction": "horizontal",
-    "width": 255.5
+    "width": 255.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
+      "remotely-save:Remotely Save": false,
+      "obsidian-git:Open Git source control": false,
+      "open-vscode:VSCode": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -168,53 +168,52 @@
       "bases:Create new base": false
     }
   },
-  "active": "f78ff478ee671040",
+  "active": "a1e4ba1f7d058064",
   "lastOpenFiles": [
-    "Exercise/如果自学，应该怎么学健身.md",
-    "Exercise/Untitled.md",
+    "LLM基础/cs336_spring2025_assignment1_basics.pdf",
+    "LLM基础/Assignment1.md",
+    "LLM基础/Decoding 解码技术.md",
+    "LLM基础/Encoder Decoder.md",
+    "Pasted image 20250929214713.png",
+    "Pasted image 20250929215022.png",
     "Exercise/闪电增肌.md",
+    "How to Think Straight about Psychology/第一章 心理学与科学.md",
+    "How to Think Straight about Psychology/Welcome.md",
+    "Exercise/如果自学，应该怎么学健身.md",
+    "HuggingFace/Transformers  Class 用到的方法.md",
+    "HuggingFace/Transformer Models.md",
+    "HuggingFace/Transformer Encoding Text.md",
+    "HuggingFace/Tokenizers.md",
+    "LangChain/Build an Extraction Chain.md",
+    "LangChain/Chat models and prompts.md",
+    "LLM基础/lec1.md",
+    "Exercise/Untitled.md",
     "Exercise/运动解剖学",
     "Exercise/Untitled",
     "Exercise/运动生理学",
     "Exercise/运动营养学",
     "Exercise/Welcome.md",
     "Exercise",
-    "How to Think Straight about Psychology/第一章 心理学与科学.md",
     "How to Think Straight about Psychology/第一章.md",
     "How to Think Straight about Psychology/第一张.md",
     "How to Think Straight about Psychology/Untitled.md",
-    "How to Think Straight about Psychology/Welcome.md",
     "How to Think Straight about Psychology",
-    "LLM基础/Assignment1.md",
-    "LLM基础/lec1.md",
     "LLM基础/lec3.md",
     "LLM基础/Normalization标准化.md",
     "LLM基础/掩码Mask.md",
     "LLM基础/注意力机制.md",
     "Pasted image 20250909135532.png",
     "LLM基础/实现分词器.md",
-    "LLM基础/Encoder Decoder.md",
-    "LLM基础/Decoding 解码技术.md",
     "ThinkingOfWork",
     "LLM基础/lec2.md",
-    "常用 Callout 模板清单.md",
     "Pasted image 20250930135427.png",
-    "README.md",
     "Pasted image 20250930102055.png",
     "Pasted image 20250930101001.png",
     "Pasted image 20250929215139.png",
-    "Pasted image 20250929215022.png",
     "Pasted image 20250929214739.png",
-    "Pasted image 20250929214713.png",
     "Pasted image 20250929212929.png",
     "Pasted image 20250929195256.png",
-    "conflict-files-obsidian-git.md",
-    "HuggingFace/Tokenizers.md",
-    "HuggingFace/Transformer Models.md",
-    "HuggingFace/Transformer Encoding Text.md",
-    "HuggingFace/Transformers  Class 用到的方法.md",
     "LangChain",
-    "HuggingFace",
-    "LLM基础"
+    "HuggingFace"
   ]
 }
