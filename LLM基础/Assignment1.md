@@ -138,7 +138,18 @@ def train_bpe(
     {0: b'\x00', 1: b'\x01', ..., 256: b'<|endoftext|>',257: b'th', ...},
     [(b't', b'h'), (b'th', b'e'), ...]
   )
-
 ```
 
+`merge` 
+```json
+(b`h`,b'e')
+意思是把 h和e merge成一个新的token b和h
+```
+
+整体的流程就是
+找到出现频率最多的两个字符 然后把他俩合并称一个，也就是放到merge里面。
+同时把`new_token` 放到vocab 词表里面
+进行多次，完成这个步骤。
+
 # Implementing the linear module 实施Linear 层
+## Basic Building Blocks: Linear and Embedding Modules

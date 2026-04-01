@@ -4,17 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "6cd5e5e55f5711f7",
+        "id": "ae2bf295cbe55406",
         "type": "tabs",
         "children": [
           {
-            "id": "a1e4ba1f7d058064",
+            "id": "e1e2ddfa3d167f36",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "type": "pdf",
+              "state": {
+                "file": "LLM基础/cs336_spring2025_assignment1_basics.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "cs336_spring2025_assignment1_basics"
             }
           }
         ]
@@ -168,10 +170,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "a1e4ba1f7d058064",
+  "active": "a78d0da2f467cdb8",
   "lastOpenFiles": [
-    "LLM基础/cs336_spring2025_assignment1_basics.pdf",
     "LLM基础/Assignment1.md",
+    "LLM基础/cs336_spring2025_assignment1_basics.pdf",
     "LLM基础/Decoding 解码技术.md",
     "LLM基础/Encoder Decoder.md",
     "Pasted image 20250929214713.png",
