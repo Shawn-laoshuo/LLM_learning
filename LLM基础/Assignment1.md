@@ -151,5 +151,68 @@ def train_bpe(
 同时把`new_token` 放到vocab 词表里面
 进行多次，完成这个步骤。
 
-# Implementing the linear module 实施Linear 层
-## Basic Building Blocks: Linear and Embedding Modules
+
+# 3 Transformer Language Model Architecture
+language model 用 一组整数ID作为输入。比如 `[1,2,3,4,5]`。格式大概是 `[batch_size,sequece_length]`。 第一个维度是句子的数量，第二个维度是句子的长度。 这个整数是tokenizor层的结果了。
+
+输出 一个 或者一个 batch的 normalized probability distribution。
+
+在训练语言模型的过程中，我们计算生成的文本和实际文本之间的 cross-entropy loss。以此来进行梯度下降。
+
+	在推理的过程中，我们会从 sequence中 得到 next-word distribution，也就是 下一个文字的分布情况。然后生成 下一个文字的token。 循环往复，得到语言模型的输出结果。
+
+## 3.1 Transformer LM
+### 3.1.1 Token Embeddings
+经过Embedding 层， token从整数，经历一个查表的过程，被转换成离散的数据。
+数据的格式也就是从
+`[batch_size,sequece_length]` 转换为 `[batch_size,sequence_length,d_model]`
+其中 `batch_size` 自然就是 句子的数量，而`sequence_length` 是每句中所包含的token数量。最后 `d_model`  是每个token所转换成的维度的 `embedding_dim` 的向量。
+
+### 3.1.2 Pre-norm Transformer Block
+pre-norm 风格的 Transformer Block.
+embedding 做之后，拿到了一堆向量。这些向量都是 `[batch_size,sequence_length,d_model]` 长这样的。 输入和输出长得一样，但是实际上他们被 normalization 了。
+
+## 3.2 Output Normalization and Embedding
+在经过多个 transformer block的变换之后，获得的activation 激活值，会被转换成一个概率分布。 这个在这个概率分布抽样后会得到的我们需要的token。
+
+在transformer中，用的一般都是 pre-norm 也就是数据在被计算之前，先把数据标准化，然后进行计算。
+
+## 3.3 Remark: Batching, Einsum and Efficient Computation
+Enisum 用来做矩阵乘法，这样我们不需要复杂的转置，通过矩阵的notation 标记，也就是这个维度代表什么数据，就可以免去复杂的转置计算。
+
+## 3.4 Basic Building Blocks: Linear and Embedding Modules
+实施 线性层和 embedding层。
+
+### 3.4.1 Parameter Initialization
+参数初始化。初始化的方式会很大程度上影响模型的训练效果，在这次的作业中，我们的初始化方式为
+
+- Linear weights: $\mathcal{N}\left(\mu = 0, \sigma^2 = \frac{2}{d_{\text{in}} + d_{\text{out}}}\right)$ truncated at $[-3\sigma, 3\sigma]$.
+
+- Embedding: $\mathcal{N}\left(\mu = 0, \sigma^2 = 1\right)$ truncated at $[-3, 3]$.
+
+- RMSNorm: $1$
+### 3.4.2 Linear Module
+Linear Module
+这个类 继承自
+`class Linear(nn.Module):`
+这个`nn.Module` 类 初始化 weight
+在 `forward` 方法中，输入的数据 x乘上 `self.weight`
+
+### 3.4.3 Embedding Module
+embedding module 的用处，简单来说就是查表
+讲 `[batch_size,sequence_length]` 转换成 `[batch_size,sequence_size,d_model]` 这个格式。
+
+大概流程是 从 embedding matrix（`self.weight`）这个大表上，通过 token id 来查询。
+
+
+
+## 3.4 Pre-Norm Transformer Block
+有人发现把 norm的操作转移到从输出层之前(post-norm)转移到 the input of each sub-layer，效果会比较好一些。
+现在这个作业要implement 的就是 pre-norm Transformer。
+### 3.4.1 Root Mean Square Layer Normalization
+也就是  `RMSNorm`  公式为：
+$\mathrm{RMSNorm}(a_i) = \frac{a_i}{\mathrm{RMS}(a)} g_i$
+其中gi 是一个可学习的参数。
+$\mathrm{}$
+
+
