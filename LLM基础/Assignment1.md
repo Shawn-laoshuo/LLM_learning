@@ -215,4 +215,5 @@ $\mathrm{RMSNorm}(a_i) = \frac{a_i}{\mathrm{RMS}(a)} g_i$
 其中gi 是一个可学习的参数。
 $\mathrm{}$
 
+### 3.4.2 Position-Wise Feed-Forward Network
 
