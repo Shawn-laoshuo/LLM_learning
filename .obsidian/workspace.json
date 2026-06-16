@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "ece39d9d2a2ed8bf",
+        "id": "12d1b0bf0fd35f3f",
         "type": "tabs",
         "children": [
           {
-            "id": "cde8274b73e89de4",
+            "id": "37a390e9c193e02c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -22,7 +22,7 @@
             }
           },
           {
-            "id": "ec8b77a768405df9",
+            "id": "a6a7a23587171cb5",
             "type": "leaf",
             "state": {
               "type": "pdf",
@@ -91,7 +91,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 261.5
+    "width": 261.5,
+    "collapsed": true
   },
   "right": {
     "id": "2aec7c7eb08d3245",
@@ -184,14 +185,21 @@
       "open-vscode:VSCode": false
     }
   },
-  "active": "ec8b77a768405df9",
+  "active": "a6a7a23587171cb5",
   "lastOpenFiles": [
-    "nvim.log",
     "LLM基础/Assignment1.md",
     "LLM基础/cs336_assignment1_basics.pdf",
+    "金发奖/bank_payment_routing_optimization.md",
+    "金发奖/完整汇总报告.md",
+    "金发奖/bank_payment_routing_optimization_v2.md",
+    "金发奖",
+    "Pasted image 20250909135532.png",
+    "LLM基础/Decoding 解码技术.md",
+    "Pasted image 20260507153833.png",
+    "Untitled.md",
+    "nvim.log",
     "cs336_assignment1_basics.pdf",
     "LLM基础/cs336_spring2025_assignment1_basics.pdf",
-    "LLM基础/Decoding 解码技术.md",
     "LLM基础/Encoder Decoder.md",
     "Pasted image 20250929214713.png",
     "Pasted image 20250929215022.png",
@@ -216,21 +224,13 @@
     "How to Think Straight about Psychology/第一章.md",
     "How to Think Straight about Psychology/第一张.md",
     "How to Think Straight about Psychology/Untitled.md",
-    "How to Think Straight about Psychology",
     "LLM基础/lec3.md",
     "LLM基础/Normalization标准化.md",
-    "LLM基础/掩码Mask.md",
-    "LLM基础/注意力机制.md",
-    "Pasted image 20250909135532.png",
-    "LLM基础/实现分词器.md",
-    "ThinkingOfWork",
-    "LLM基础/lec2.md",
     "Pasted image 20250930135427.png",
     "Pasted image 20250930102055.png",
     "Pasted image 20250930101001.png",
     "Pasted image 20250929215139.png",
     "Pasted image 20250929214739.png",
-    "Pasted image 20250929212929.png",
-    "Pasted image 20250929195256.png"
+    "Pasted image 20250929212929.png"
   ]
 }
