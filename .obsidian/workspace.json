@@ -22,7 +22,7 @@
             }
           },
           {
-            "id": "a6a7a23587171cb5",
+            "id": "332b81c40e4a06e3",
             "type": "leaf",
             "state": {
               "type": "pdf",
@@ -185,10 +185,11 @@
       "open-vscode:VSCode": false
     }
   },
-  "active": "a6a7a23587171cb5",
+  "active": "332b81c40e4a06e3",
   "lastOpenFiles": [
     "LLM基础/Assignment1.md",
     "LLM基础/cs336_assignment1_basics.pdf",
+    "常用 Callout 模板清单.md",
     "金发奖/bank_payment_routing_optimization.md",
     "金发奖/完整汇总报告.md",
     "金发奖/bank_payment_routing_optimization_v2.md",
@@ -225,7 +226,6 @@
     "How to Think Straight about Psychology/第一张.md",
     "How to Think Straight about Psychology/Untitled.md",
     "LLM基础/lec3.md",
-    "LLM基础/Normalization标准化.md",
     "Pasted image 20250930135427.png",
     "Pasted image 20250930102055.png",
     "Pasted image 20250930101001.png",

@@ -303,7 +303,6 @@ $$
 \mathrm{score_{ij}} = q_{i}^T k_{j} 
 $$
 
-
 $$
 a_{ij} = softmax(score_{ij})
 $$
@@ -580,3 +579,53 @@ W_O \operatorname{MultiHead}(W_Q x,\; W_K x,\; W_V x)
 $$
 
 
+## 3.5 The full Transformer LM
+大模型不仅有一层Transformer，而是多个 Transformer block 叠起来做到的。
+Transformer block 包括 两个'sub-layer'  
+第一个 sub-layer 是 MHA 多头注意力计算模块
+第二个 sub-layer 是 SwiGLU feed-forward 计算模块
+每个block 的职责就是 过着两个模块。 先做 attention 计算 每个token直接相互看，然后再对每个token做非线性变换(SwiGLU Feed-Forward Network 激活函数)。 
+Residual Add 的含义就是这个动作
+$$
+y = x + \text{MultiHeadSelfAttention}(\text{RMSNorm}(x))
+$$
+输入的值 加上attention的结果 这叫残差连接 防止梯度消失或梯度下降。
+> [!note]- 为什么叫残差连接呢
+> **残差（Residual）的含义**：在数学中，残差通常指“观测值与估计值之差”。
+> **连接的逻辑**：在 Transformer 中，我们将层输入 $x$ 看作“基准信息”。我们让注意力层只去计算 $x$ 需要**修正、补充或提取的细节**（即那个“残差部分”：$\text{MultiHeadSelfAttention}(\text{RMSNorm}(x))$）。
+> **叠加**：最后通过 $y = x + \text{残差}$，模型输出的就是“原始信息 + 修正部分”。这就像是给原始信息做了一次“精修”和“润色”。
+
+
+# 4 Training a Transformer LM
+
+Transformer的训练要素
+Loss Function 这里选用 Cross-entropy
+Optimizer  优化器 这里介绍了AdamW
+Training Loop 我们需要工具来 load data ，save check points， manage training。这里就用Pytorch 自带的组件来实现了。
+
+
+## 4.1 Cross-entropy loss
+核心思想在于，LM一直在猜下一个词，猜中的概率越高(给Ground Truth 分配的概率越高) Loss越小。
+猜中的概率越低(给Ground Truth 分配的概率越低) Loss 越大。
+
+假设训练集里面只有一句话
+$$
+[我,爱,北京]
+$$
+Tokenizer 之后会变成一串。数字，这个是根据词表来的。
+$$
+[101,102,103]
+$$
+语言模型在训练的时候，就是根据前面的词预测下一个词,
+也就是 
+
+|输入|目标|
+|---|---|
+|我|爱|
+|我 爱|北京|
+
+
+公式描述也就是
+$$
+\log p_{\theta} (x_{i+1}|x_{1:i})
+$$
